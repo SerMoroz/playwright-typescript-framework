@@ -49,7 +49,7 @@ jobs:
         run: npx playwright test --project=api
       - name: Upload report
         if: ${{ !cancelled() }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: playwright-report-api
           path: |
@@ -88,7 +88,7 @@ jobs:
         run: npx playwright test --project=${{ matrix.project }}
       - name: Upload report
         if: ${{ !cancelled() }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: playwright-report-${{ matrix.project }}
           path: |
